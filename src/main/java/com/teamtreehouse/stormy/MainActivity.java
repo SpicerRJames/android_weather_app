@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     Call call = client.newCall(request);
 
-    Response response = call.execute();
-
+    try {
+      Response response = call.execute();
+    } catch (IOException e){
+      Log.e(TAG, "IO Exception caugthm : " + e);
+    }
 
   }
 }
